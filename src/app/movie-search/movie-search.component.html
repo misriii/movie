@@ -1,0 +1,20 @@
+<div class="container text-center mt-4">
+
+    <div class="bg-secondary">
+        <h2 class="fs-1">Movie Search</h2>
+        <input class="m-3" type="text" [(ngModel)]="movieName" placeholder="Enter movie title">
+        <button class="btn btn-primary m-3" (click)="searchMovie()">Search</button>
+        <div *ngIf="movieDetails">
+          <h3>Movie Name: {{ movieDetails.Title }}</h3>
+          <p>Released date: {{ movieDetails.Released }}</p>
+          <p>Actors: {{ movieDetails.Actors }}</p>
+          <p>Plot: {{ movieDetails.Plot }}</p>
+          <p>Ratings: {{ movieDetails.Ratings[0].Value }}</p>
+          <p>Votes: {{ movieDetails.imdbVotes }}</p>
+
+          <img [src]="movieDetails.Poster" alt="Movie Poster">
+        </div>
+      </div>
+
+</div>
+
